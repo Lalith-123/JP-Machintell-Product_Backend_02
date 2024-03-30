@@ -1,0 +1,56 @@
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser'); // Assuming you have body-parser middleware
+const addproduct = require('./routes/ProductRoutes/addproduct');
+const viewproduct = require('./routes/ProductRoutes/viewproduct');
+const updateproduct = require('./routes/ProductRoutes/updateproduct');
+const deleteproduct = require('./routes/ProductRoutes/deleteproduct');
+const addproductsecondaryfn = require('./routes/ProductSecondaryFnRoutes/addproductsecondaryfn');
+const viewproductsecondaryfn = require('./routes/ProductSecondaryFnRoutes/viewproductsecondaryfn');
+const updateproductsecondaryfn = require('./routes/ProductSecondaryFnRoutes/updateproductsecondaryfn');
+const deleteproductsecondaryfn = require('./routes/ProductSecondaryFnRoutes/deleteproductsecondaryfn');
+const addproductspecs = require('./routes/ProductSpecsRoutes/addproductspecs');
+const viewproductspecs = require('./routes/ProductSpecsRoutes/viewproductspecs');
+const updateproductspecs = require('./routes/ProductSpecsRoutes/updateproductspecs');
+const deleteproductspecs = require('./routes/ProductSpecsRoutes/deleteproductspecs');
+const addsubassembly = require('./routes/SubAssemblyRoutes/addsubassembly');
+const viewsubassembly = require('./routes/SubAssemblyRoutes/viewsubassembly');
+const updatesubassembly = require('./routes/SubAssemblyRoutes/updatesubassembly');
+const deletesubassembly = require('./routes/SubAssemblyRoutes/deletesubassembly');
+const addsubassemblysecfn = require('./routes/SubAssemblySecFnRoutes/addsubassemblysecfn');
+const viewsubassemblysecfn = require('./routes/SubAssemblySecFnRoutes/viewsubassemblysecfn');
+const updatesubassemblysecfn = require('./routes/SubAssemblySecFnRoutes/updatesubassemblysecfn');
+const deletesubassemblysecfn = require('./routes/SubAssemblySecFnRoutes/deletesubassemblysecfn');
+const addsubassemblycomponents = require('./routes/SubAssemblyComponentsRoutes/addsubassemblycomponents');
+const viewsubassemblycomponents = require('./routes/SubAssemblyComponentsRoutes/viewsubassemblycomponents');
+const updatesubassemblycomponents = require('./routes/SubAssemblyComponentsRoutes/updatesubassemblycomponents');
+const deletesubassemblycomponents = require('./routes/SubAssemblyComponentsRoutes/deletesubassemblycomponents');
+
+app.use(bodyParser.json());
+app.listen('3002', (req, res)=>{
+    console.log('working');
+})
+app.use('/api/v1/addproduct', addproduct);
+app.use('/api/v1/viewproduct', viewproduct);
+app.use('/api/v1/updateproduct', updateproduct);
+app.use('/api/v1/deleteproduct', deleteproduct);
+app.use('/api/v1/addproductsecondaryfn', addproductsecondaryfn);
+app.use('/api/v1/viewproductsecondaryfn', viewproductsecondaryfn);
+app.use('/api/v1/updateproductsecondaryfn', updateproductsecondaryfn);
+app.use('/api/v1/deleteproductsecondaryfn', deleteproductsecondaryfn);
+app.use('/api/v1/addproductspecs', addproductspecs);
+app.use('/api/v1/viewproductspecs', viewproductspecs);
+app.use('/api/v1/updateproductspecs', updateproductspecs);
+app.use('/api/v1/deleteproductspecs', deleteproductspecs);
+app.use('/api/v1/addsubassembly', addsubassembly);
+app.use('/api/v1/viewsubassembly', viewsubassembly);
+app.use('/api/v1/updatesubassembly', updatesubassembly);
+app.use('/api/v1/deletesubassembly', deletesubassembly);
+app.use('/api/v1/addsubassemblysecfn', addsubassemblysecfn);
+app.use('/api/v1/viewsubassemblysecfn', viewsubassemblysecfn);
+app.use('/api/v1/updatesubassemblysecfn', updatesubassemblysecfn);
+app.use('/api/v1/deletesubassemblysecfn', deletesubassemblysecfn);
+app.use('/api/v1/addsubassemblycomponents', addsubassemblycomponents);
+app.use('/api/v1/viewsubassemblycomponents', viewsubassemblycomponents);
+app.use('/api/v1/updatesubassemblycomponents', updatesubassemblycomponents);
+app.use('/api/v1/deletesubassemblycomponents', deletesubassemblycomponents);
