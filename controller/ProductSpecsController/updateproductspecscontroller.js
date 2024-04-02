@@ -3,19 +3,13 @@ const updateProductspecsController = async(req, res) => {
     try
     {
         const {id} = req.params;
+        // res.send(id);
         const {product_specs, product_unit, product_value}= req.body;
-
-        // const result = await updateProductspecsModel(product_specs, product_unit, product_value, id);
-        // res.status(200).json({message: 'Product Specs Updated Successfully', data: result});
-        // console.log(result);
-        if (product_specs != NULL)
-        {
-            console.log(product_specs);
-        }
-       
+        const result = await updateProductspecsModel(product_specs, product_unit, product_value, id);
+        res.status(200).json({message: 'Product Specs Updated Successfully', data: result});
     }
     catch (err)
-    {
+    {  
         console.log(err);
         res.json({error: 'Not Properly Updated. Please try again'});
     }

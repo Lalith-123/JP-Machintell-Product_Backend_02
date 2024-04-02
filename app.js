@@ -27,7 +27,7 @@ const updatesubassemblycomponents = require('./routes/SubAssemblyComponentsRoute
 const deletesubassemblycomponents = require('./routes/SubAssemblyComponentsRoutes/deletesubassemblycomponents');
 
 app.use(bodyParser.json());
-app.listen('3002', (req, res)=>{
+app.listen('4004', (req, res)=>{
     console.log('working');
 })
 app.use('/api/v1/addproduct', addproduct);

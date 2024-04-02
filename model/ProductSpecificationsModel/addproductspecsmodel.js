@@ -2,7 +2,7 @@ const con = require('../db');
 const addproductSpecsModel = (id, product_specs, product_unit, product_value) => {
     return new Promise((resolve, reject)=>
     {
-        con.query("INSERT INTO product_specifications(product_id, product_specs, product_unit, product_value) VALUES(?, ?, ?, ?)", [id, product_specs, product_unit, product_value],
+        con.query("INSERT INTO product_specifications(product_id, product_specifications, product_unit, product_value) VALUES(?, ?, ?, ?)", [id, product_specs, product_unit, product_value],
         (error, result) => {
             if(error)
             {
@@ -13,7 +13,7 @@ const addproductSpecsModel = (id, product_specs, product_unit, product_value) =>
             {
                 console.log(result);
                 resolve(result);
-            }
+            } 
         })
     })  
 }
