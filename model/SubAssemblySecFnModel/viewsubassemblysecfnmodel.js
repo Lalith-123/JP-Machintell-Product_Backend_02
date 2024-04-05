@@ -1,7 +1,7 @@
 const con = require('../db');
 const viewsubassemblysecfnModel = (id) => {
     return new Promise((resolve, reject) => {
-        con.query("SELECT * FROM sub_secfn WHERE product_id= ?",[id], (error, result) => {
+        con.query("SELECT * FROM sub_sec_functions WHERE product_id= ?",[id], (error, result) => {
             if (error) {
                 reject(error);
             } else {

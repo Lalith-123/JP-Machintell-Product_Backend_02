@@ -2,7 +2,7 @@ const con = require('../db');
 const deletesubassemblysecfnModel = (id) => 
 {
     return new Promise((resolve, reject)=>{
-        con.query("DELETE FROM subsecfn WHERE product_id = ?", [id], 
+        con.query("DELETE FROM sub_sec_functions WHERE product_id = ?", [id], 
         (error, result) => {
             if (error) {
                 console.error(error);

@@ -2,7 +2,7 @@ const con = require('../db');
 const addsubassemblysecfnModel = (product_id, sub_secondary_functions_details) => {
     return new Promise((resolve, reject)=>
     {
-        con.query('INSERT INTO sub_assemblies(product_id, sub_secondary_functions_details) VALUES(?, ?)', [product_id, sub_secondary_functions_details],
+        con.query('INSERT INTO sub_sec_functions(product_id, sub_secondary_functions_details) VALUES(?, ?)', [product_id, sub_secondary_functions_details],
         (error, result) => {
             if(error)
             {
