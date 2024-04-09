@@ -1,7 +1,7 @@
 const con = require('../db');
-const updatesubassemblycomponentsModel = (sub_assembly_id, sub_assembly_specs, sub_assembly_unit, sub_assembly_value, id) => {
+const updatesubassemblycomponentsModel = (item_name , bought_up, comp_file_location, id) => {
         return new Promise((resolve, reject) => {
-            con.query('UPDATE sub_assembly SET sub_assembly_id = ?, sub_assembly_specs = ?, sub_assembly_unit = ?, sub_assembly_value = ?', [sub_assembly_id, sub_assembly_specs, sub_assembly_unit, sub_assembly_value, id],
+            con.query('UPDATE sub_assembly_components SET item_name = ?, bought_up = ?, comp_file_location = ? where product_id =?', [item_name, bought_up, comp_file_location, id],
             (error, result) => 
             {
                 if(error)

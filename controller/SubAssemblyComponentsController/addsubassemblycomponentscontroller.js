@@ -1,11 +1,11 @@
-const addsubassemblycomponentsModel = require('../../model/subassemblycomponentsModel/addsubassemblycomponentsmodel');
+const addsubassemblycomponentsModel = require('../../model/SubAssemblyComponentsModel/addsubassemblycomponentsmodel');
 const addsubassemblycomponentsController = async (req,res) => 
 {
     try
     {
         const {id} = req.params;
-        const {sub_assembly_specs, sub_assembly_unit, sub_assembly_value}= req.body
-        const result = await addsubassemblycomponentsModel(id, sub_assembly_specs, sub_assembly_unit, sub_assembly_value);
+        const {item_name, bought_up, sub_assembly_id, comp_file_location}= req.body
+        const result = await addsubassemblyspecificationsModel(item_name, bought_up, sub_assembly_id, comp_file_location);
         res.status(200).json({message: 'Sub_assembly Added Successfully', data: result});
     }
     catch (err)
