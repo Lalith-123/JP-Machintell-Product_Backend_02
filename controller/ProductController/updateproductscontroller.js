@@ -10,7 +10,7 @@ const updateProductController = async(req, res) => {
     catch (err)
     {
         console.log(err);
-        res.json({error: 'Not Properly Updated. Pleas try again'});
+        res.json({error: 'Not Properly Updated. Please try again'});
     }
 }
 module.exports = updateProductController;
