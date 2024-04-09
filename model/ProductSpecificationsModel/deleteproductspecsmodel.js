@@ -1,5 +1,5 @@
 const con = require('../db');
-const deleteProductSpecsModel = (id) => 
+const DeleteProductspecsModel = (id) => 
 {
     return new Promise((resolve, reject)=>{
         con.query("DELETE FROM product_specifications WHERE product_id = ?", [id], 
@@ -18,4 +18,4 @@ const deleteProductSpecsModel = (id) =>
     })
 }
 
-module.exports = deleteProductSpecsModel;
+module.exports = DeleteProductspecsModel;
