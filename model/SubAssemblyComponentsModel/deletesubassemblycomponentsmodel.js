@@ -2,7 +2,7 @@ const con = require('../db');
 const deletesubassemblycomponentsModel = (id) => 
 {
     return new Promise((resolve, reject)=>{
-        con.query("DELETE FROM subassembly_components WHERE product_id = ?", [id], 
+        con.query("DELETE FROM sub_assembly_components WHERE sub_assembly_id = ?", [id], 
         (error, result) => {
             if (error) {
                 console.error(error);
