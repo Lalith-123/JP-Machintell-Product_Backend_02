@@ -1,8 +1,8 @@
 const con = require('../db');
-const addProductModel = (product_name, product_id, File_Location) => {
+const addProductModel = (product_name, product_id, File_Location, product_main_function) => {
     return new Promise((resolve, reject) => {
-        con.query("INSERT INTO product(product_name, product_id, File_Location) VALUES(?, ?, ?)", 
-        [product_name, product_id, File_Location],
+        con.query("INSERT INTO product(product_name, product_id, File_Location, product_main_function) VALUES(?, ?, ?, ?)", 
+        [product_name, product_id, File_Location, product_main_function],
         (error, result) => {
             if (error) {
                 console.error(error);

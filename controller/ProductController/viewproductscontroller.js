@@ -5,6 +5,7 @@ const viewproductscontroller = async (req, res) => {
         const {id} = req.params;
         const [result] = await viewProductModel(id);
         res.send(result);
+        console.log(id);
     }
     catch (err)
     {

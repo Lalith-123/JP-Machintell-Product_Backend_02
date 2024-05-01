@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const cors = require('cors'); // Importing CORS middleware
+
 const bodyParser = require('body-parser'); // Assuming you have body-parser middleware
 const addproduct = require('./routes/ProductRoutes/addproduct');
 const viewproduct = require('./routes/ProductRoutes/viewproduct');
@@ -30,10 +32,19 @@ const viewsubassemblycomponents = require('./routes/SubAssemblyComponentsRoutes/
 const updatesubassemblycomponents = require('./routes/SubAssemblyComponentsRoutes/updatesubassemblycomponents');
 const deletesubassemblycomponents = require('./routes/SubAssemblyComponentsRoutes/deletesubassemblycomponents');
 
+const viewproductlist = require('./routes/ProductNamesRoutes/viewproductnamesroutes');
+const viewproducttree = require("./routes/ProductTreeRoutes/viewproducttreeroutes");
+
+app.use(cors());
+
+// Use body-parser middleware
 app.use(bodyParser.json());
-app.listen('4004', (req, res)=>{
-    console.log('working');
-})
+
+// Start the server
+app.listen(4000, () => {
+    console.log('Server is running on port 4000');
+});
+
 app.use('/api/v1/addproduct', addproduct);
 app.use('/api/v1/viewproduct', viewproduct);
 app.use('/api/v1/updateproduct', updateproduct);
@@ -62,3 +73,6 @@ app.use('/api/v1/addsubassemblycomponents', addsubassemblycomponents);
 app.use('/api/v1/viewsubassemblycomponents', viewsubassemblycomponents);
 app.use('/api/v1/updatesubassemblycomponents', updatesubassemblycomponents);
 app.use('/api/v1/deletesubassemblycomponents', deletesubassemblycomponents);
+
+app.use('/api/v1/viewproductlist', viewproductlist);
+app.use('/api/v1/viewproducttree', viewproducttree);

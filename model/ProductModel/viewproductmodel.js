@@ -5,6 +5,7 @@ const viewProductsModel = (id) => {
             if (error) {
                 reject(error);
             } else {
+                console.log(result);
                 resolve(result);
             }
         });
