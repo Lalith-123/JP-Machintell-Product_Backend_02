@@ -34,6 +34,7 @@ const deletesubassemblycomponents = require('./routes/SubAssemblyComponentsRoute
 
 const viewproductlist = require('./routes/ProductNamesRoutes/viewproductnamesroutes');
 const viewproducttree = require("./routes/ProductTreeRoutes/viewproducttreeroutes");
+const createDuplicates = require('./routes/CreateDuplicateRouter/createduplicateroutes');
 
 app.use(cors());
 
@@ -76,3 +77,4 @@ app.use('/api/v1/deletesubassemblycomponents', deletesubassemblycomponents);
 
 app.use('/api/v1/viewproductlist', viewproductlist);
 app.use('/api/v1/viewproducttree', viewproducttree);
+app.use('/api/v1/createDuplicates', createDuplicates);
